@@ -1,32 +1,31 @@
-import Image from "next/image"
-import { ExternalLink, Home, MapPin, Calendar, Users, ImageIcon } from "lucide-react"
+import Image from "next/image";
+import {
+  ExternalLink,
+  Home,
+  MapPin,
+  Calendar,
+  Users,
+  ImageIcon,
+} from "lucide-react";
 
 const listings = [
   {
     id: "1",
     label: "Option A",
     airbnbUrl:
-      "https://www.airbnb.co.uk/rooms/820498898519126942?adults=5&check_in=2026-03-22&check_out=2026-03-24",
-    listingId: "820498898519126942",
-    image: "/images/airbnb-a.jpg",
+      "https://www.airbnb.co.uk/rooms/728331284962205734?adults=5&check_in=2026-03-22&check_out=2026-03-24",
+    listingId: "728331284962205734",
+    image: "/images/3718d60f-d189-4602-b67d-27aae80ba875.avif",
   },
   {
     id: "2",
     label: "Option B",
     airbnbUrl:
-      "https://www.airbnb.co.uk/rooms/728331284962205734?adults=5&check_in=2026-03-22&check_out=2026-03-24",
-    listingId: "728331284962205734",
-    image: "/images/airbnb-b.jpg",
-  },
-  {
-    id: "3",
-    label: "Option C",
-    airbnbUrl:
       "https://www.airbnb.co.uk/rooms/771170435233922731?adults=5&check_in=2026-03-22&check_out=2026-03-24",
     listingId: "771170435233922731",
-    image: "/images/airbnb-c.jpg",
+    image: "/images/9ca6f817-cd1e-4b3e-8641-548d6b51f2cb.avif",
   },
-]
+];
 
 export function AccommodationOptions() {
   return (
@@ -39,8 +38,8 @@ export function AccommodationOptions() {
           Flagstaff Accommodation
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
-          We need a place for 5 people for 2 nights in Flagstaff (March 22
-          &amp; 23). Here are three Airbnb options to choose from &mdash; click
+          We need a place for 5 people for 2 nights in Flagstaff (March 22 &amp;
+          23). Here are three Airbnb options to choose from &mdash; click
           through to see photos, pricing, and availability.
         </p>
 
@@ -54,8 +53,7 @@ export function AccommodationOptions() {
             Mar 22 &ndash; 24 (2 nights)
           </span>
           <span className="flex items-center gap-1.5">
-            <Users className="h-3.5 w-3.5" />
-            5 guests
+            <Users className="h-3.5 w-3.5" />5 guests
           </span>
         </div>
 
@@ -81,7 +79,15 @@ export function AccommodationOptions() {
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted-foreground">
                     <ImageIcon className="h-8 w-8" />
-                    <span className="text-xs">Add image to /public/images/airbnb-{listing.id === "1" ? "a" : listing.id === "2" ? "b" : "c"}.jpg</span>
+                    <span className="text-xs">
+                      Add image to /public/images/airbnb-
+                      {listing.id === "1"
+                        ? "a"
+                        : listing.id === "2"
+                          ? "b"
+                          : "c"}
+                      .jpg
+                    </span>
                   </div>
                 )}
                 <div className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur-sm">
@@ -108,5 +114,5 @@ export function AccommodationOptions() {
         </div>
       </div>
     </section>
-  )
+  );
 }
